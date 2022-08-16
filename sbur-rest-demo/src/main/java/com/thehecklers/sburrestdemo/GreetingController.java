@@ -11,8 +11,16 @@ public class GreetingController {
     @Value("${greeting-name:Mirage}")
     private String name;
 
+    @Value("${greeting-coffee:${greeting-name} is drinking Cafe Ganador}")
+    private String coffee;
+
     @GetMapping
     String getGreeting() {
         return name;
+    }
+
+    @GetMapping("/coffee")
+    String getNameAndCoffee() {
+        return coffee;
     }
 }
